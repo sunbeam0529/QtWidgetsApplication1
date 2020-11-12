@@ -27,9 +27,6 @@
     <QtRcc Include="QtWidgetsApplication1.qrc">
       <Filter>Resource Files</Filter>
     </QtRcc>
-    <QtUic Include="QtWidgetsApplication1.ui">
-      <Filter>Resource Files</Filter>
-    </QtUic>
     <QtMoc Include="QtWidgetsApplication1.h">
       <Filter>Header Files</Filter>
     </QtMoc>
@@ -44,5 +41,10 @@
     <ClCompile Include="main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <QtUic Include="QtWidgetsApplication1.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
   </ItemGroup>
 </Project>
