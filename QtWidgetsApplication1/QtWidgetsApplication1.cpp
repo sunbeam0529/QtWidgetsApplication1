@@ -10,6 +10,7 @@ QtWidgetsApplication1::QtWidgetsApplication1(QWidget *parent)
     ui.gaugeColor->setValue(0);
     ui.gaugeColor_2->setValue(0);
     engine_state = 0;
+
 }
 void QtWidgetsApplication1::on_sbEngine_checkedChanged(bool value)
 {

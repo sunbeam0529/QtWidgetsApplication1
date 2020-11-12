@@ -130,7 +130,7 @@
        <bool>true</bool>
       </property>
      </widget>
-     <widget class="QLabel" name="label_2">
+     <widget class="QLabel" name="lb_CruiseSpeed">
       <property name="geometry">
        <rect>
         <x>630</x>
@@ -152,7 +152,7 @@
        <string>100 Km/h</string>
       </property>
      </widget>
-     <widget class="QLabel" name="label">
+     <widget class="QLabel" name="lb_cruiseicon">
       <property name="geometry">
        <rect>
         <x>580</x>
