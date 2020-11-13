@@ -23,7 +23,7 @@ private slots:
 
     void on_cbdown_clicked(void);
 
-    void on_Minus_clicked(void);
+    void on_cbMinus_clicked(void);
 
     void on_cbPlus_clicked(void);
 

@@ -27,7 +27,7 @@
      </rect>
     </property>
     <property name="currentIndex">
-     <number>1</number>
+     <number>2</number>
     </property>
     <widget class="QWidget" name="tab_5">
      <attribute name="title">
@@ -76,7 +76,7 @@
      <attribute name="title">
       <string>仪表</string>
      </attribute>
-     <widget class="BarVolume" name="bv_DistVal">
+     <widget class="BarVolume" name="barVolume">
       <property name="geometry">
        <rect>
         <x>410</x>
@@ -111,7 +111,7 @@
        <number>10</number>
       </property>
      </widget>
-     <widget class="QLabel" name="lb_DistIcon">
+     <widget class="QLabel" name="label_3">
       <property name="geometry">
        <rect>
         <x>350</x>
@@ -541,10 +541,10 @@
      <attribute name="title">
       <string>娱乐</string>
      </attribute>
-     <widget class="QPushButton" name="pushButton">
+     <widget class="QPushButton" name="pbPlay">
       <property name="geometry">
        <rect>
-        <x>400</x>
+        <x>200</x>
         <y>440</y>
         <width>75</width>
         <height>71</height>
@@ -558,10 +558,10 @@ background-color: rgba(255, 0, 0, 0%);</string>
        <string/>
       </property>
      </widget>
-     <widget class="QPushButton" name="pushButton_2">
+     <widget class="QPushButton" name="pbSeekPlus">
       <property name="geometry">
        <rect>
-        <x>520</x>
+        <x>320</x>
         <y>440</y>
         <width>75</width>
         <height>71</height>
@@ -575,10 +575,10 @@ background-color: rgba(255, 0, 0, 0%);</string>
        <string/>
       </property>
      </widget>
-     <widget class="QPushButton" name="pushButton_3">
+     <widget class="QPushButton" name="pbSeekMinus">
       <property name="geometry">
        <rect>
-        <x>280</x>
+        <x>80</x>
         <y>440</y>
         <width>75</width>
         <height>71</height>
@@ -592,10 +592,10 @@ background-color: rgba(255, 0, 0, 0%);</string>
        <string/>
       </property>
      </widget>
-     <widget class="ProgressTip" name="progressTip">
+     <widget class="ProgressTip" name="ptVolBar">
       <property name="geometry">
        <rect>
-        <x>290</x>
+        <x>90</x>
         <y>40</y>
         <width>361</width>
         <height>31</height>
@@ -628,7 +628,7 @@ background-color: rgba(255, 0, 0, 0%);</string>
      <widget class="QLabel" name="label_4">
       <property name="geometry">
        <rect>
-        <x>250</x>
+        <x>50</x>
         <y>40</y>
         <width>50</width>
         <height>50</height>
@@ -647,7 +647,7 @@ background-color: rgba(255, 0, 0, 0%);</string>
      <widget class="QLabel" name="label_5">
       <property name="geometry">
        <rect>
-        <x>310</x>
+        <x>110</x>
         <y>130</y>
         <width>250</width>
         <height>250</height>
@@ -666,7 +666,7 @@ background-color: rgba(255, 0, 0, 0%);</string>
      <widget class="QLabel" name="label_6">
       <property name="geometry">
        <rect>
-        <x>370</x>
+        <x>170</x>
         <y>400</y>
         <width>131</width>
         <height>21</height>
@@ -682,10 +682,10 @@ background-color: rgba(255, 0, 0, 0%);</string>
        <string>胡歌-六月的雨</string>
       </property>
      </widget>
-     <widget class="QSlider" name="horizontalSlider">
+     <widget class="QSlider" name="hsVolBar">
       <property name="geometry">
        <rect>
-        <x>310</x>
+        <x>110</x>
         <y>60</y>
         <width>321</width>
         <height>19</height>
@@ -701,6 +701,251 @@ background-color: rgba(255, 0, 0, 0%);</string>
        <enum>Qt::Horizontal</enum>
       </property>
      </widget>
+     <widget class="ColorButton" name="cbSeekPlus">
+      <property name="geometry">
+       <rect>
+        <x>500</x>
+        <y>150</y>
+        <width>100</width>
+        <height>50</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>上一曲</string>
+      </property>
+      <property name="textFont">
+       <font>
+        <family>微软雅黑</family>
+        <pointsize>14</pointsize>
+        <weight>50</weight>
+        <bold>false</bold>
+       </font>
+      </property>
+      <property name="normalColor">
+       <color>
+        <red>85</red>
+        <green>170</green>
+        <blue>127</blue>
+       </color>
+      </property>
+      <property name="pressedColor">
+       <color>
+        <red>170</red>
+        <green>85</green>
+        <blue>0</blue>
+       </color>
+      </property>
+     </widget>
+     <widget class="ColorButton" name="cbSeekMinus">
+      <property name="geometry">
+       <rect>
+        <x>500</x>
+        <y>230</y>
+        <width>100</width>
+        <height>50</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>下一曲</string>
+      </property>
+      <property name="textFont">
+       <font>
+        <family>微软雅黑</family>
+        <pointsize>14</pointsize>
+        <weight>50</weight>
+        <bold>false</bold>
+       </font>
+      </property>
+      <property name="normalColor">
+       <color>
+        <red>85</red>
+        <green>170</green>
+        <blue>127</blue>
+       </color>
+      </property>
+      <property name="pressedColor">
+       <color>
+        <red>170</red>
+        <green>85</green>
+        <blue>0</blue>
+       </color>
+      </property>
+     </widget>
+     <widget class="ColorButton" name="cbPhone">
+      <property name="geometry">
+       <rect>
+        <x>620</x>
+        <y>150</y>
+        <width>100</width>
+        <height>50</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>接听</string>
+      </property>
+      <property name="textFont">
+       <font>
+        <family>微软雅黑</family>
+        <pointsize>14</pointsize>
+        <weight>50</weight>
+        <bold>false</bold>
+       </font>
+      </property>
+      <property name="normalColor">
+       <color>
+        <red>85</red>
+        <green>170</green>
+        <blue>127</blue>
+       </color>
+      </property>
+      <property name="pressedColor">
+       <color>
+        <red>170</red>
+        <green>85</green>
+        <blue>0</blue>
+       </color>
+      </property>
+     </widget>
+     <widget class="ColorButton" name="cbReturn">
+      <property name="geometry">
+       <rect>
+        <x>740</x>
+        <y>150</y>
+        <width>100</width>
+        <height>50</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>返回</string>
+      </property>
+      <property name="textFont">
+       <font>
+        <family>微软雅黑</family>
+        <pointsize>14</pointsize>
+        <weight>50</weight>
+        <bold>false</bold>
+       </font>
+      </property>
+      <property name="normalColor">
+       <color>
+        <red>85</red>
+        <green>170</green>
+        <blue>127</blue>
+       </color>
+      </property>
+      <property name="pressedColor">
+       <color>
+        <red>170</red>
+        <green>85</green>
+        <blue>0</blue>
+       </color>
+      </property>
+     </widget>
+     <widget class="ColorButton" name="cbOK">
+      <property name="geometry">
+       <rect>
+        <x>620</x>
+        <y>230</y>
+        <width>100</width>
+        <height>50</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>OK</string>
+      </property>
+      <property name="textFont">
+       <font>
+        <family>微软雅黑</family>
+        <pointsize>14</pointsize>
+        <weight>50</weight>
+        <bold>false</bold>
+       </font>
+      </property>
+      <property name="normalColor">
+       <color>
+        <red>85</red>
+        <green>170</green>
+        <blue>127</blue>
+       </color>
+      </property>
+      <property name="pressedColor">
+       <color>
+        <red>170</red>
+        <green>85</green>
+        <blue>0</blue>
+       </color>
+      </property>
+     </widget>
+     <widget class="ColorButton" name="cbVolMinus">
+      <property name="geometry">
+       <rect>
+        <x>740</x>
+        <y>230</y>
+        <width>51</width>
+        <height>50</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>-</string>
+      </property>
+      <property name="textFont">
+       <font>
+        <family>微软雅黑</family>
+        <pointsize>14</pointsize>
+        <weight>50</weight>
+        <bold>false</bold>
+       </font>
+      </property>
+      <property name="normalColor">
+       <color>
+        <red>85</red>
+        <green>170</green>
+        <blue>127</blue>
+       </color>
+      </property>
+      <property name="pressedColor">
+       <color>
+        <red>170</red>
+        <green>85</green>
+        <blue>0</blue>
+       </color>
+      </property>
+     </widget>
+     <widget class="ColorButton" name="cbVolPlus">
+      <property name="geometry">
+       <rect>
+        <x>800</x>
+        <y>230</y>
+        <width>51</width>
+        <height>50</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>+</string>
+      </property>
+      <property name="textFont">
+       <font>
+        <family>微软雅黑</family>
+        <pointsize>14</pointsize>
+        <weight>50</weight>
+        <bold>false</bold>
+       </font>
+      </property>
+      <property name="normalColor">
+       <color>
+        <red>85</red>
+        <green>170</green>
+        <blue>127</blue>
+       </color>
+      </property>
+      <property name="pressedColor">
+       <color>
+        <red>170</red>
+        <green>85</green>
+        <blue>0</blue>
+       </color>
+      </property>
+     </widget>
     </widget>
     <widget class="QWidget" name="tab_3">
      <attribute name="title">
@@ -712,7 +957,7 @@ background-color: rgba(255, 0, 0, 0%);</string>
         <x>60</x>
         <y>230</y>
         <width>261</width>
-        <height>342</height>
+        <height>302</height>
        </rect>
       </property>
       <layout class="QGridLayout" name="gridLayout" rowstretch="1,0,0,0,0,0,0,0,0,0" columnstretch="1,0,0">
@@ -1225,7 +1470,7 @@ background-color: rgba(255, 0, 0, 0%);</string>
         <x>390</x>
         <y>230</y>
         <width>251</width>
-        <height>342</height>
+        <height>302</height>
        </rect>
       </property>
       <layout class="QGridLayout" name="gridLayout_2" rowstretch="1,0,0,0,0,0,0,0,0,0" columnstretch="1,0,0">
@@ -1780,8 +2025,8 @@ background-color: rgba(255, 0, 0, 0%);</string>
        <rect>
         <x>20</x>
         <y>220</y>
-        <width>367</width>
-        <height>342</height>
+        <width>351</width>
+        <height>302</height>
        </rect>
       </property>
       <layout class="QGridLayout" name="gridLayout_4" rowstretch="1,0,0,0,0,0,0,0,0,0" columnstretch="1,0,0,0,0">
@@ -2625,8 +2870,8 @@ background-color: rgba(255, 0, 0, 0%);</string>
        <rect>
         <x>400</x>
         <y>220</y>
-        <width>371</width>
-        <height>342</height>
+        <width>331</width>
+        <height>302</height>
        </rect>
       </property>
       <layout class="QGridLayout" name="gridLayout_5" rowstretch="1,1,1,1,1,1,1,1,1,1" columnstretch="1,0,0,0,0">
@@ -3589,9 +3834,9 @@ background-color: rgba(255, 0, 0, 0%);</string>
  </resources>
  <connections>
   <connection>
-   <sender>horizontalSlider</sender>
+   <sender>hsVolBar</sender>
    <signal>valueChanged(int)</signal>
-   <receiver>progressTip</receiver>
+   <receiver>ptVolBar</receiver>
    <slot>setValue(int)</slot>
    <hints>
     <hint type="sourcelabel">
