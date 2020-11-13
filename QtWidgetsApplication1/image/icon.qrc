@@ -1,18 +1,19 @@
 <RCC>
-  <qresource prefix="/icon">
-    <file>巡航控制指示灯.png</file>
-    <file>静音.png</file>
-    <file>音量.png</file>
-    <file>播放.png</file>
-    <file>上一曲.png</file>
-    <file>下一曲.png</file>
-  </qresource>
-  <qresource prefix="image">
-    <file>右板效果图.png</file>
-    <file>左板效果图.png</file>
-    <file>20201027184215.png</file>
-  </qresource>
-  <qresource prefix="/music_pic">
-    <file>胡歌-六月的雨.jpg</file>
-  </qresource>
+    <qresource prefix="/icon">
+        <file>巡航控制指示灯.png</file>
+        <file>静音.png</file>
+        <file>音量.png</file>
+        <file>播放.png</file>
+        <file>上一曲.png</file>
+        <file>下一曲.png</file>
+    </qresource>
+    <qresource prefix="/image">
+        <file>右板效果图.png</file>
+        <file>左板效果图.png</file>
+        <file>20201027184215.png</file>
+    </qresource>
+    <qresource prefix="/music_pic">
+        <file>胡歌-六月的雨.jpg</file>
+        <file>薛之谦-丑八怪.jpg</file>
+    </qresource>
 </RCC>

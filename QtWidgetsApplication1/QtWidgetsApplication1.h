@@ -27,6 +27,20 @@ private slots:
 
     void on_cbPlus_clicked(void);
 
+    void on_cbSeekPlus_clicked(void);
+
+    void on_cbSeekMinus_clicked(void);
+
+    void on_cbPhone_clicked(void);
+    
+    void on_cbOK_clicked(void);
+
+    void on_cbReturn_clicked(void);
+
+    void on_cbVolMinus_clicked(void);
+
+    void on_cbVolPlus_clicked(void);
+
 public:
     QtWidgetsApplication1(QWidget *parent = Q_NULLPTR);
 
