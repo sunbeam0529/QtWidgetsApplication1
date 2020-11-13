@@ -76,7 +76,7 @@
      <attribute name="title">
       <string>仪表</string>
      </attribute>
-     <widget class="BarVolume" name="barVolume">
+     <widget class="BarVolume" name="bv_DistVal">
       <property name="geometry">
        <rect>
         <x>410</x>
@@ -111,7 +111,7 @@
        <number>10</number>
       </property>
      </widget>
-     <widget class="QLabel" name="label_3">
+     <widget class="QLabel" name="lb_DistIcon">
       <property name="geometry">
        <rect>
         <x>350</x>
@@ -712,7 +712,7 @@ background-color: rgba(255, 0, 0, 0%);</string>
         <x>60</x>
         <y>230</y>
         <width>261</width>
-        <height>302</height>
+        <height>342</height>
        </rect>
       </property>
       <layout class="QGridLayout" name="gridLayout" rowstretch="1,0,0,0,0,0,0,0,0,0" columnstretch="1,0,0">
@@ -1225,7 +1225,7 @@ background-color: rgba(255, 0, 0, 0%);</string>
         <x>390</x>
         <y>230</y>
         <width>251</width>
-        <height>302</height>
+        <height>342</height>
        </rect>
       </property>
       <layout class="QGridLayout" name="gridLayout_2" rowstretch="1,0,0,0,0,0,0,0,0,0" columnstretch="1,0,0">
@@ -1780,8 +1780,8 @@ background-color: rgba(255, 0, 0, 0%);</string>
        <rect>
         <x>20</x>
         <y>220</y>
-        <width>351</width>
-        <height>302</height>
+        <width>367</width>
+        <height>342</height>
        </rect>
       </property>
       <layout class="QGridLayout" name="gridLayout_4" rowstretch="1,0,0,0,0,0,0,0,0,0" columnstretch="1,0,0,0,0">
@@ -2625,8 +2625,8 @@ background-color: rgba(255, 0, 0, 0%);</string>
        <rect>
         <x>400</x>
         <y>220</y>
-        <width>331</width>
-        <height>302</height>
+        <width>371</width>
+        <height>342</height>
        </rect>
       </property>
       <layout class="QGridLayout" name="gridLayout_5" rowstretch="1,1,1,1,1,1,1,1,1,1" columnstretch="1,0,0,0,0">

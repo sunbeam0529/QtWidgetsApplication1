@@ -8,6 +8,7 @@ class QtWidgetsApplication1 : public QMainWindow
     Q_OBJECT
 private slots:
     void on_sbEngine_checkedChanged(bool value);
+
     void on_cbDIST_clicked(void);
 
     void on_cbLIM_clicked(void);
@@ -21,6 +22,10 @@ private slots:
     void on_cbup_clicked(void);
 
     void on_cbdown_clicked(void);
+
+    void on_Minus_clicked(void);
+
+    void on_cbPlus_clicked(void);
 
 public:
     QtWidgetsApplication1(QWidget *parent = Q_NULLPTR);
