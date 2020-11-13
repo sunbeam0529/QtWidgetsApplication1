@@ -27,6 +27,8 @@ private slots:
 
     void on_cbPlus_clicked(void);
 
+    void on_sb_Phone_checkedChanged(bool value);
+
     void on_cbSeekPlus_clicked(void);
 
     void on_cbSeekMinus_clicked(void);
@@ -40,6 +42,14 @@ private slots:
     void on_cbVolMinus_clicked(void);
 
     void on_cbVolPlus_clicked(void);
+
+    void on_pbPlay_clicked(void);
+
+    void on_pbSeekMinus_clicked(void);
+
+	void on_pbSeekPlus_clicked(void);
+
+    void on_cbPhone_pressed(void);
 
 public:
     QtWidgetsApplication1(QWidget *parent = Q_NULLPTR);

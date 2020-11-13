@@ -1,13 +1,16 @@
 #include "QtWidgetsApplication1.h"
+#include "qtimer.h"
 
 #define CRUISE_OFF      0
 #define CRUISE_ON       1
 #define CRUISE_START    2
 
 int speed,engine_state, cruisespeed,lastcruisespeed;
-int distval;
-
+int distval,menuid;
+bool phonestate,voicestate,playstate,menustate;
+QTimer *timer1;
 int cruise_state;
+QString menuarr[] = { u8"²Ëµ¥-µ¼º½.jpg",u8"²Ëµ¥-µç»°.jpg", u8"²Ëµ¥-ÒôÀÖ.jpg", u8"²Ëµ¥-µçÌ¨.jpg", };
 QtWidgetsApplication1::QtWidgetsApplication1(QWidget *parent)
     : QMainWindow(parent)
 {
@@ -20,8 +23,12 @@ QtWidgetsApplication1::QtWidgetsApplication1(QWidget *parent)
     ui.lb_CruiseSpeed->hide();
     ui.lb_DistIcon->hide();
     ui.bv_DistVal->hide();
+    ui.lb_PhoneImage->hide();
+    ui.lb_VoiceIcon->hide();
     cruise_state = CRUISE_OFF;
     distval = 1;
+    menuid = 0;
+    menustate = true;
 }
 void QtWidgetsApplication1::on_sbEngine_checkedChanged(bool value)
 {
@@ -216,32 +223,123 @@ void QtWidgetsApplication1::on_cbPlus_clicked(void)
 
 ////////////////////////////////Right//////////////////////////////
 
-QString MusicArr[] = { "ºú¸è-ÁùÔÂµÄÓê","Ñ¦Ö®Ç«-³ó°Ë¹Ö" };
+void QtWidgetsApplication1::on_sb_Phone_checkedChanged(bool value)
+{
+    if (value)
+    {
+        ui.lb_PhoneImage->show();
+        QString imagefile = QString(u8":/image/À´µç.jpg");
+        ui.lb_PhoneImage->setPixmap(QPixmap(imagefile));
+    }
+    else
+    {
+        ui.lb_PhoneImage->hide();
+    }
+}
+
+QString MusicArr[] = { u8"ºú¸è-ÁùÔÂµÄÓê",u8"Ñ¦Ö®Ç«-³ó°Ë¹Ö" };
 int musicid;
 void QtWidgetsApplication1::on_cbSeekPlus_clicked(void)
 {
-    musicid = !musicid;
+    if (menustate == true)
+    {
+        menuid++;
+        if (menuid > 3)menuid = 0;
+        QString imagefile = QString(":/image/") + menuarr[menuid];
+        ui.lb_menu->setPixmap(QPixmap(imagefile));
+    }
+    else
+    {
+        musicid = !musicid;
+        ui.lb_MusicName->setText(MusicArr[musicid]);
+        QString imagefile = QString(":/music_pic/") + MusicArr[musicid] + QString(".jpg");
+        ui.lb_MusicIcon->setPixmap(QPixmap(imagefile));
+    }
     
 }
 
 void QtWidgetsApplication1::on_cbSeekMinus_clicked(void)
 {
-    musicid = !musicid;
+    if (menustate == true)
+    {
+        if (menuid == 0)menuid = 4;
+        menuid--;
+        
+        QString imagefile = QString(":/image/") + menuarr[menuid];
+        ui.lb_menu->setPixmap(QPixmap(imagefile));
+    }
+    else
+    {
+        musicid = !musicid;
+        ui.lb_MusicName->setText(MusicArr[musicid]);
+        QString imagefile = QString(":/music_pic/") + MusicArr[musicid] + QString(".jpg");
+        ui.lb_MusicIcon->setPixmap(QPixmap(imagefile));
+    }
+    
+}
+
+void QtWidgetsApplication1::on_cbPhone_pressed(void)
+{
+    if (!timer1)
+    {
+        timer1 = new QTimer();
+        connect(timer1, &QTimer::timeout, this, &QtWidgetsApplication1::on_cbPhone_clicked);
+    }
+    timer1->start(100);
 }
 
 void QtWidgetsApplication1::on_cbPhone_clicked(void)
 {
-
+    if (ui.sb_Phone->getChecked() == true)
+    {
+        //À´µç
+        if (phonestate == false)
+        {
+            //½ÓÌý
+            phonestate = true;
+            QString imagefile = QString(u8":/image/½ÓÌý.jpg");
+            ui.lb_PhoneImage->setPixmap(QPixmap(imagefile));
+        }
+        else
+        {
+            //¹Ò¶Ï
+            ui.lb_PhoneImage->hide();
+            phonestate = false;
+            ui.sb_Phone->setChecked(false);
+        }
+    }
+    else
+    {
+        //ÓïÒô
+        voicestate = !voicestate;
+        if (voicestate == true)
+        {
+            ui.lb_VoiceIcon->show();
+        }
+        else
+        {
+            ui.lb_VoiceIcon->hide();
+        }
+            
+    }
 }
 
 void QtWidgetsApplication1::on_cbOK_clicked(void)
 {
-
+    if (menustate == true && menuid == 2)
+    {
+        menustate = false;
+        ui.lb_menu->hide();
+    }
 }
 
 void QtWidgetsApplication1::on_cbReturn_clicked(void)
 {
-
+    if (menustate == false)
+    {
+        menustate = true;
+        ui.lb_menu->show();
+    }
 }
 
 void QtWidgetsApplication1::on_cbVolMinus_clicked(void)
@@ -262,3 +360,28 @@ void QtWidgetsApplication1::on_cbVolPlus_clicked(void)
     ui.hsVolBar->setValue(val);
 }
 
+void QtWidgetsApplication1::on_pbPlay_clicked(void)
+{
+    playstate = !playstate;
+    if (playstate == true)
+    {
+        QString imagefile = QString(u8"image: url(:/icon/ÔÝÍ£.png);background-color: rgba(255, 0, 0, 0%);");
+        ui.pbPlay->setStyleSheet(imagefile);
+    }
+    else
+    {
+        QString imagefile = QString(u8"image: url(:/icon/²¥·Å.png);background-color: rgba(255, 0, 0, 0%);");
+        ui.pbPlay->setStyleSheet(imagefile);
+    }
+
+}
+
+void QtWidgetsApplication1::on_pbSeekMinus_clicked(void)
+{
+    on_cbSeekMinus_clicked();
+}
+
+void QtWidgetsApplication1::on_pbSeekPlus_clicked(void)
+{
+    on_cbSeekMinus_clicked();
+}

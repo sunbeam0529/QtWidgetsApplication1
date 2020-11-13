@@ -27,7 +27,7 @@
      </rect>
     </property>
     <property name="currentIndex">
-     <number>2</number>
+     <number>3</number>
     </property>
     <widget class="QWidget" name="tab_5">
      <attribute name="title">
@@ -644,7 +644,7 @@ background-color: rgba(255, 0, 0, 0%);</string>
        <bool>true</bool>
       </property>
      </widget>
-     <widget class="QLabel" name="label_5">
+     <widget class="QLabel" name="lb_MusicIcon">
       <property name="geometry">
        <rect>
         <x>110</x>
@@ -711,7 +711,7 @@ background-color: rgba(255, 0, 0, 0%);</string>
        </rect>
       </property>
       <property name="text">
-       <string>上一曲</string>
+       <string>上</string>
       </property>
       <property name="textFont">
        <font>
@@ -746,7 +746,7 @@ background-color: rgba(255, 0, 0, 0%);</string>
        </rect>
       </property>
       <property name="text">
-       <string>下一曲</string>
+       <string>下</string>
       </property>
       <property name="textFont">
        <font>
@@ -781,7 +781,7 @@ background-color: rgba(255, 0, 0, 0%);</string>
        </rect>
       </property>
       <property name="text">
-       <string>接听</string>
+       <string>接听/语音</string>
       </property>
       <property name="textFont">
        <font>
@@ -946,6 +946,98 @@ background-color: rgba(255, 0, 0, 0%);</string>
        </color>
       </property>
      </widget>
+     <widget class="QLabel" name="lb_VoiceIcon">
+      <property name="geometry">
+       <rect>
+        <x>390</x>
+        <y>100</y>
+        <width>71</width>
+        <height>71</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="pixmap">
+       <pixmap resource="image/icon.qrc">:/icon/语音.png</pixmap>
+      </property>
+      <property name="scaledContents">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QLabel" name="lb_PhoneImage">
+      <property name="geometry">
+       <rect>
+        <x>50</x>
+        <y>-30</y>
+        <width>401</width>
+        <height>651</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="pixmap">
+       <pixmap resource="image/icon.qrc">:/image/来电.jpg</pixmap>
+      </property>
+      <property name="scaledContents">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="SwitchButton" name="sb_Phone">
+      <property name="geometry">
+       <rect>
+        <x>760</x>
+        <y>30</y>
+        <width>60</width>
+        <height>30</height>
+       </rect>
+      </property>
+      <property name="textOff">
+       <string>来电</string>
+      </property>
+      <property name="textOn">
+       <string>挂断</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="lb_menu">
+      <property name="geometry">
+       <rect>
+        <x>50</x>
+        <y>-10</y>
+        <width>401</width>
+        <height>591</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="pixmap">
+       <pixmap resource="image/icon.qrc">:/image/菜单-导航.jpg</pixmap>
+      </property>
+      <property name="scaledContents">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <zorder>pbPlay</zorder>
+     <zorder>pbSeekPlus</zorder>
+     <zorder>pbSeekMinus</zorder>
+     <zorder>ptVolBar</zorder>
+     <zorder>label_4</zorder>
+     <zorder>lb_MusicIcon</zorder>
+     <zorder>lb_MusicName</zorder>
+     <zorder>hsVolBar</zorder>
+     <zorder>cbSeekPlus</zorder>
+     <zorder>cbSeekMinus</zorder>
+     <zorder>cbPhone</zorder>
+     <zorder>cbReturn</zorder>
+     <zorder>cbOK</zorder>
+     <zorder>cbVolMinus</zorder>
+     <zorder>cbVolPlus</zorder>
+     <zorder>sb_Phone</zorder>
+     <zorder>lb_menu</zorder>
+     <zorder>lb_VoiceIcon</zorder>
+     <zorder>lb_PhoneImage</zorder>
     </widget>
     <widget class="QWidget" name="tab_3">
      <attribute name="title">
@@ -954,13 +1046,13 @@ background-color: rgba(255, 0, 0, 0%);</string>
      <widget class="QWidget" name="gridLayoutWidget">
       <property name="geometry">
        <rect>
-        <x>60</x>
-        <y>230</y>
-        <width>261</width>
-        <height>342</height>
+        <x>40</x>
+        <y>170</y>
+        <width>301</width>
+        <height>392</height>
        </rect>
       </property>
-      <layout class="QGridLayout" name="gridLayout" rowstretch="1,0,0,0,0,0,0,0,0,0" columnstretch="1,0,0">
+      <layout class="QGridLayout" name="gridLayout" rowstretch="1,0,0,0,0,0,0,0,0,0" columnstretch="1,1,2">
        <property name="leftMargin">
         <number>2</number>
        </property>
@@ -1027,22 +1119,6 @@ background-color: rgba(255, 0, 0, 0%);</string>
          </property>
         </widget>
        </item>
-       <item row="8" column="2">
-        <widget class="QLineEdit" name="lineEdit_17">
-         <property name="maximumSize">
-          <size>
-           <width>60</width>
-           <height>16777215</height>
-          </size>
-         </property>
-         <property name="alignment">
-          <set>Qt::AlignCenter</set>
-         </property>
-         <property name="readOnly">
-          <bool>true</bool>
-         </property>
-        </widget>
-       </item>
        <item row="9" column="1">
         <widget class="QLineEdit" name="lineEdit_9">
          <property name="maximumSize">
@@ -1053,22 +1129,6 @@ background-color: rgba(255, 0, 0, 0%);</string>
          </property>
          <property name="text">
           <string>/</string>
-         </property>
-         <property name="alignment">
-          <set>Qt::AlignCenter</set>
-         </property>
-         <property name="readOnly">
-          <bool>true</bool>
-         </property>
-        </widget>
-       </item>
-       <item row="1" column="2">
-        <widget class="QLineEdit" name="lineEdit_10">
-         <property name="maximumSize">
-          <size>
-           <width>60</width>
-           <height>16777215</height>
-          </size>
          </property>
          <property name="alignment">
           <set>Qt::AlignCenter</set>
@@ -1091,22 +1151,6 @@ background-color: rgba(255, 0, 0, 0%);</string>
          </property>
          <property name="alignment">
           <set>Qt::AlignCenter</set>
-         </property>
-        </widget>
-       </item>
-       <item row="3" column="2">
-        <widget class="QLineEdit" name="lineEdit_12">
-         <property name="maximumSize">
-          <size>
-           <width>60</width>
-           <height>16777215</height>
-          </size>
-         </property>
-         <property name="alignment">
-          <set>Qt::AlignCenter</set>
-         </property>
-         <property name="readOnly">
-          <bool>true</bool>
          </property>
         </widget>
        </item>
@@ -1142,22 +1186,6 @@ background-color: rgba(255, 0, 0, 0%);</string>
          </property>
         </widget>
        </item>
-       <item row="5" column="2">
-        <widget class="QLineEdit" name="lineEdit_15">
-         <property name="maximumSize">
-          <size>
-           <width>60</width>
-           <height>16777215</height>
-          </size>
-         </property>
-         <property name="alignment">
-          <set>Qt::AlignCenter</set>
-         </property>
-         <property name="readOnly">
-          <bool>true</bool>
-         </property>
-        </widget>
-       </item>
        <item row="6" column="1">
         <widget class="QLineEdit" name="lineEdit_6">
          <property name="maximumSize">
@@ -1165,6 +1193,9 @@ background-color: rgba(255, 0, 0, 0%);</string>
            <width>60</width>
            <height>16777215</height>
           </size>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">background-color: rgb(70, 255, 138);</string>
          </property>
          <property name="alignment">
           <set>Qt::AlignCenter</set>
@@ -1182,37 +1213,8 @@ background-color: rgba(255, 0, 0, 0%);</string>
            <height>16777215</height>
           </size>
          </property>
-         <property name="alignment">
-          <set>Qt::AlignCenter</set>
-         </property>
-         <property name="readOnly">
-          <bool>true</bool>
-         </property>
-        </widget>
-       </item>
-       <item row="7" column="2">
-        <widget class="QLineEdit" name="lineEdit_16">
-         <property name="maximumSize">
-          <size>
-           <width>60</width>
-           <height>16777215</height>
-          </size>
-         </property>
-         <property name="alignment">
-          <set>Qt::AlignCenter</set>
-         </property>
-         <property name="readOnly">
-          <bool>true</bool>
-         </property>
-        </widget>
-       </item>
-       <item row="6" column="2">
-        <widget class="QLineEdit" name="lineEdit_14">
-         <property name="maximumSize">
-          <size>
-           <width>60</width>
-           <height>16777215</height>
-          </size>
+         <property name="styleSheet">
+          <string notr="true">background-color: rgb(70, 255, 138);</string>
          </property>
          <property name="alignment">
           <set>Qt::AlignCenter</set>
@@ -1230,21 +1232,8 @@ background-color: rgba(255, 0, 0, 0%);</string>
            <height>16777215</height>
           </size>
          </property>
-         <property name="alignment">
-          <set>Qt::AlignCenter</set>
-         </property>
-         <property name="readOnly">
-          <bool>true</bool>
-         </property>
-        </widget>
-       </item>
-       <item row="4" column="2">
-        <widget class="QLineEdit" name="lineEdit_13">
-         <property name="maximumSize">
-          <size>
-           <width>60</width>
-           <height>16777215</height>
-          </size>
+         <property name="styleSheet">
+          <string notr="true">background-color: rgb(70, 255, 138);</string>
          </property>
          <property name="alignment">
           <set>Qt::AlignCenter</set>
@@ -1261,6 +1250,9 @@ background-color: rgba(255, 0, 0, 0%);</string>
            <width>60</width>
            <height>16777215</height>
           </size>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">background-color: rgb(70, 255, 138);</string>
          </property>
          <property name="alignment">
           <set>Qt::AlignCenter</set>
@@ -1286,22 +1278,6 @@ background-color: rgba(255, 0, 0, 0%);</string>
          </property>
         </widget>
        </item>
-       <item row="2" column="2">
-        <widget class="QLineEdit" name="lineEdit_11">
-         <property name="maximumSize">
-          <size>
-           <width>60</width>
-           <height>16777215</height>
-          </size>
-         </property>
-         <property name="alignment">
-          <set>Qt::AlignCenter</set>
-         </property>
-         <property name="readOnly">
-          <bool>true</bool>
-         </property>
-        </widget>
-       </item>
        <item row="2" column="1">
         <widget class="QLineEdit" name="lineEdit_2">
          <property name="maximumSize">
@@ -1309,6 +1285,9 @@ background-color: rgba(255, 0, 0, 0%);</string>
            <width>60</width>
            <height>16777215</height>
           </size>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">background-color: rgb(70, 255, 138);</string>
          </property>
          <property name="alignment">
           <set>Qt::AlignCenter</set>
@@ -1326,6 +1305,9 @@ background-color: rgba(255, 0, 0, 0%);</string>
            <height>16777215</height>
           </size>
          </property>
+         <property name="styleSheet">
+          <string notr="true">background-color: rgb(70, 255, 138);</string>
+         </property>
          <property name="alignment">
           <set>Qt::AlignCenter</set>
          </property>
@@ -1342,6 +1324,9 @@ background-color: rgba(255, 0, 0, 0%);</string>
            <height>16777215</height>
           </size>
          </property>
+         <property name="styleSheet">
+          <string notr="true">background-color: rgb(70, 255, 138);</string>
+         </property>
          <property name="alignment">
           <set>Qt::AlignCenter</set>
          </property>
@@ -1357,6 +1342,9 @@ background-color: rgba(255, 0, 0, 0%);</string>
            <width>60</width>
            <height>16777215</height>
           </size>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">background-color: rgb(70, 255, 138);</string>
          </property>
          <property name="alignment">
           <set>Qt::AlignCenter</set>
@@ -1414,22 +1402,6 @@ background-color: rgba(255, 0, 0, 0%);</string>
          </property>
         </widget>
        </item>
-       <item row="9" column="2">
-        <widget class="QLineEdit" name="lineEdit_18">
-         <property name="maximumSize">
-          <size>
-           <width>60</width>
-           <height>16777215</height>
-          </size>
-         </property>
-         <property name="alignment">
-          <set>Qt::AlignCenter</set>
-         </property>
-         <property name="readOnly">
-          <bool>true</bool>
-         </property>
-        </widget>
-       </item>
        <item row="0" column="1">
         <widget class="QLabel" name="label_10">
          <property name="font">
@@ -1462,18 +1434,171 @@ background-color: rgba(255, 0, 0, 0%);</string>
          </property>
         </widget>
        </item>
+       <item row="1" column="2">
+        <widget class="XProgressBar" name="xProgressBar">
+         <property name="value">
+          <number>10</number>
+         </property>
+         <property name="textColor">
+          <color alpha="0">
+           <red>255</red>
+           <green>255</green>
+           <blue>255</blue>
+          </color>
+         </property>
+         <property name="radius">
+          <number>1</number>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="2">
+        <widget class="XProgressBar" name="xProgressBar_2">
+         <property name="value">
+          <number>20</number>
+         </property>
+         <property name="textColor">
+          <color alpha="0">
+           <red>255</red>
+           <green>255</green>
+           <blue>255</blue>
+          </color>
+         </property>
+         <property name="radius">
+          <number>1</number>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="2">
+        <widget class="XProgressBar" name="xProgressBar_3">
+         <property name="value">
+          <number>0</number>
+         </property>
+         <property name="textColor">
+          <color alpha="0">
+           <red>255</red>
+           <green>255</green>
+           <blue>255</blue>
+          </color>
+         </property>
+         <property name="radius">
+          <number>1</number>
+         </property>
+        </widget>
+       </item>
+       <item row="4" column="2">
+        <widget class="XProgressBar" name="xProgressBar_4">
+         <property name="value">
+          <number>0</number>
+         </property>
+         <property name="textColor">
+          <color alpha="0">
+           <red>255</red>
+           <green>255</green>
+           <blue>255</blue>
+          </color>
+         </property>
+         <property name="radius">
+          <number>1</number>
+         </property>
+        </widget>
+       </item>
+       <item row="5" column="2">
+        <widget class="XProgressBar" name="xProgressBar_5">
+         <property name="value">
+          <number>0</number>
+         </property>
+         <property name="textColor">
+          <color alpha="0">
+           <red>255</red>
+           <green>255</green>
+           <blue>255</blue>
+          </color>
+         </property>
+         <property name="radius">
+          <number>1</number>
+         </property>
+        </widget>
+       </item>
+       <item row="6" column="2">
+        <widget class="XProgressBar" name="xProgressBar_6">
+         <property name="value">
+          <number>0</number>
+         </property>
+         <property name="textColor">
+          <color alpha="0">
+           <red>255</red>
+           <green>255</green>
+           <blue>255</blue>
+          </color>
+         </property>
+         <property name="radius">
+          <number>1</number>
+         </property>
+        </widget>
+       </item>
+       <item row="7" column="2">
+        <widget class="XProgressBar" name="xProgressBar_7">
+         <property name="value">
+          <number>0</number>
+         </property>
+         <property name="textColor">
+          <color alpha="0">
+           <red>255</red>
+           <green>255</green>
+           <blue>255</blue>
+          </color>
+         </property>
+         <property name="radius">
+          <number>1</number>
+         </property>
+        </widget>
+       </item>
+       <item row="8" column="2">
+        <widget class="XProgressBar" name="xProgressBar_8">
+         <property name="value">
+          <number>0</number>
+         </property>
+         <property name="textColor">
+          <color alpha="0">
+           <red>255</red>
+           <green>255</green>
+           <blue>255</blue>
+          </color>
+         </property>
+         <property name="radius">
+          <number>1</number>
+         </property>
+        </widget>
+       </item>
+       <item row="9" column="2">
+        <widget class="XProgressBar" name="xProgressBar_9">
+         <property name="value">
+          <number>0</number>
+         </property>
+         <property name="textColor">
+          <color alpha="0">
+           <red>255</red>
+           <green>255</green>
+           <blue>255</blue>
+          </color>
+         </property>
+         <property name="radius">
+          <number>1</number>
+         </property>
+        </widget>
+       </item>
       </layout>
      </widget>
      <widget class="QWidget" name="gridLayoutWidget_2">
       <property name="geometry">
        <rect>
-        <x>390</x>
-        <y>230</y>
-        <width>251</width>
-        <height>342</height>
+        <x>370</x>
+        <y>170</y>
+        <width>321</width>
+        <height>392</height>
        </rect>
       </property>
-      <layout class="QGridLayout" name="gridLayout_2" rowstretch="1,0,0,0,0,0,0,0,0,0" columnstretch="1,0,0">
+      <layout class="QGridLayout" name="gridLayout_2" rowstretch="1,0,0,0,0,0,0,0,0,0" columnstretch="1,1,2">
        <property name="leftMargin">
         <number>2</number>
        </property>
@@ -1516,6 +1641,9 @@ background-color: rgba(255, 0, 0, 0%);</string>
            <height>16777215</height>
           </size>
          </property>
+         <property name="styleSheet">
+          <string notr="true">background-color: rgb(70, 255, 138);</string>
+         </property>
          <property name="alignment">
           <set>Qt::AlignCenter</set>
          </property>
@@ -1540,22 +1668,6 @@ background-color: rgba(255, 0, 0, 0%);</string>
          </property>
         </widget>
        </item>
-       <item row="6" column="2">
-        <widget class="QLineEdit" name="lineEdit_42">
-         <property name="maximumSize">
-          <size>
-           <width>60</width>
-           <height>16777215</height>
-          </size>
-         </property>
-         <property name="alignment">
-          <set>Qt::AlignCenter</set>
-         </property>
-         <property name="readOnly">
-          <bool>true</bool>
-         </property>
-        </widget>
-       </item>
        <item row="7" column="0">
         <widget class="QLabel" name="label_20">
          <property name="font">
@@ -1569,38 +1681,6 @@ background-color: rgba(255, 0, 0, 0%);</string>
          </property>
          <property name="alignment">
           <set>Qt::AlignCenter</set>
-         </property>
-        </widget>
-       </item>
-       <item row="2" column="2">
-        <widget class="QLineEdit" name="lineEdit_35">
-         <property name="maximumSize">
-          <size>
-           <width>60</width>
-           <height>16777215</height>
-          </size>
-         </property>
-         <property name="alignment">
-          <set>Qt::AlignCenter</set>
-         </property>
-         <property name="readOnly">
-          <bool>true</bool>
-         </property>
-        </widget>
-       </item>
-       <item row="9" column="2">
-        <widget class="QLineEdit" name="lineEdit_49">
-         <property name="maximumSize">
-          <size>
-           <width>60</width>
-           <height>16777215</height>
-          </size>
-         </property>
-         <property name="alignment">
-          <set>Qt::AlignCenter</set>
-         </property>
-         <property name="readOnly">
-          <bool>true</bool>
          </property>
         </widget>
        </item>
@@ -1655,22 +1735,6 @@ background-color: rgba(255, 0, 0, 0%);</string>
          </property>
         </widget>
        </item>
-       <item row="3" column="2">
-        <widget class="QLineEdit" name="lineEdit_52">
-         <property name="maximumSize">
-          <size>
-           <width>60</width>
-           <height>16777215</height>
-          </size>
-         </property>
-         <property name="alignment">
-          <set>Qt::AlignCenter</set>
-         </property>
-         <property name="readOnly">
-          <bool>true</bool>
-         </property>
-        </widget>
-       </item>
        <item row="1" column="1">
         <widget class="QLineEdit" name="lineEdit_53">
          <property name="maximumSize">
@@ -1678,6 +1742,9 @@ background-color: rgba(255, 0, 0, 0%);</string>
            <width>60</width>
            <height>16777215</height>
           </size>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">background-color: rgb(245, 2, 2);</string>
          </property>
          <property name="alignment">
           <set>Qt::AlignCenter</set>
@@ -1694,6 +1761,9 @@ background-color: rgba(255, 0, 0, 0%);</string>
            <width>60</width>
            <height>16777215</height>
           </size>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">background-color: rgb(70, 255, 138);</string>
          </property>
          <property name="alignment">
           <set>Qt::AlignCenter</set>
@@ -1727,21 +1797,8 @@ background-color: rgba(255, 0, 0, 0%);</string>
            <height>16777215</height>
           </size>
          </property>
-         <property name="alignment">
-          <set>Qt::AlignCenter</set>
-         </property>
-         <property name="readOnly">
-          <bool>true</bool>
-         </property>
-        </widget>
-       </item>
-       <item row="1" column="2">
-        <widget class="QLineEdit" name="lineEdit_28">
-         <property name="maximumSize">
-          <size>
-           <width>60</width>
-           <height>16777215</height>
-          </size>
+         <property name="styleSheet">
+          <string notr="true">background-color: rgb(70, 255, 138);</string>
          </property>
          <property name="alignment">
           <set>Qt::AlignCenter</set>
@@ -1758,6 +1815,9 @@ background-color: rgba(255, 0, 0, 0%);</string>
            <width>60</width>
            <height>16777215</height>
           </size>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">background-color: rgb(70, 255, 138);</string>
          </property>
          <property name="alignment">
           <set>Qt::AlignCenter</set>
@@ -1780,22 +1840,6 @@ background-color: rgba(255, 0, 0, 0%);</string>
          </property>
          <property name="alignment">
           <set>Qt::AlignCenter</set>
-         </property>
-        </widget>
-       </item>
-       <item row="4" column="2">
-        <widget class="QLineEdit" name="lineEdit_48">
-         <property name="maximumSize">
-          <size>
-           <width>60</width>
-           <height>16777215</height>
-          </size>
-         </property>
-         <property name="alignment">
-          <set>Qt::AlignCenter</set>
-         </property>
-         <property name="readOnly">
-          <bool>true</bool>
          </property>
         </widget>
        </item>
@@ -1839,6 +1883,9 @@ background-color: rgba(255, 0, 0, 0%);</string>
            <height>16777215</height>
           </size>
          </property>
+         <property name="styleSheet">
+          <string notr="true">background-color: rgb(70, 255, 138);</string>
+         </property>
          <property name="alignment">
           <set>Qt::AlignCenter</set>
          </property>
@@ -1860,38 +1907,6 @@ background-color: rgba(255, 0, 0, 0%);</string>
          </property>
          <property name="alignment">
           <set>Qt::AlignCenter</set>
-         </property>
-        </widget>
-       </item>
-       <item row="8" column="2">
-        <widget class="QLineEdit" name="lineEdit_39">
-         <property name="maximumSize">
-          <size>
-           <width>60</width>
-           <height>16777215</height>
-          </size>
-         </property>
-         <property name="alignment">
-          <set>Qt::AlignCenter</set>
-         </property>
-         <property name="readOnly">
-          <bool>true</bool>
-         </property>
-        </widget>
-       </item>
-       <item row="7" column="2">
-        <widget class="QLineEdit" name="lineEdit_46">
-         <property name="maximumSize">
-          <size>
-           <width>60</width>
-           <height>16777215</height>
-          </size>
-         </property>
-         <property name="alignment">
-          <set>Qt::AlignCenter</set>
-         </property>
-         <property name="readOnly">
-          <bool>true</bool>
          </property>
         </widget>
        </item>
@@ -1919,6 +1934,9 @@ background-color: rgba(255, 0, 0, 0%);</string>
            <height>16777215</height>
           </size>
          </property>
+         <property name="styleSheet">
+          <string notr="true">background-color: rgb(70, 255, 138);</string>
+         </property>
          <property name="alignment">
           <set>Qt::AlignCenter</set>
          </property>
@@ -1943,13 +1961,16 @@ background-color: rgba(255, 0, 0, 0%);</string>
          </property>
         </widget>
        </item>
-       <item row="5" column="2">
-        <widget class="QLineEdit" name="lineEdit_40">
+       <item row="4" column="1">
+        <widget class="QLineEdit" name="lineEdit_45">
          <property name="maximumSize">
           <size>
            <width>60</width>
            <height>16777215</height>
           </size>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">background-color: rgb(70, 255, 138);</string>
          </property>
          <property name="alignment">
           <set>Qt::AlignCenter</set>
@@ -1959,19 +1980,177 @@ background-color: rgba(255, 0, 0, 0%);</string>
          </property>
         </widget>
        </item>
-       <item row="4" column="1">
-        <widget class="QLineEdit" name="lineEdit_45">
-         <property name="maximumSize">
-          <size>
-           <width>60</width>
-           <height>16777215</height>
-          </size>
+       <item row="1" column="2">
+        <widget class="XProgressBar" name="xProgressBar_10">
+         <property name="value">
+          <number>20</number>
          </property>
-         <property name="alignment">
-          <set>Qt::AlignCenter</set>
+         <property name="textColor">
+          <color alpha="0">
+           <red>255</red>
+           <green>255</green>
+           <blue>255</blue>
+          </color>
          </property>
-         <property name="readOnly">
-          <bool>true</bool>
+         <property name="radius">
+          <number>1</number>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="2">
+        <widget class="XProgressBar" name="xProgressBar_11">
+         <property name="value">
+          <number>40</number>
+         </property>
+         <property name="textColor">
+          <color alpha="0">
+           <red>255</red>
+           <green>255</green>
+           <blue>255</blue>
+          </color>
+         </property>
+         <property name="radius">
+          <number>1</number>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="2">
+        <widget class="XProgressBar" name="xProgressBar_12">
+         <property name="value">
+          <number>60</number>
+         </property>
+         <property name="valueColor">
+          <color>
+           <red>255</red>
+           <green>170</green>
+           <blue>0</blue>
+          </color>
+         </property>
+         <property name="textColor">
+          <color alpha="0">
+           <red>255</red>
+           <green>255</green>
+           <blue>255</blue>
+          </color>
+         </property>
+         <property name="radius">
+          <number>1</number>
+         </property>
+        </widget>
+       </item>
+       <item row="4" column="2">
+        <widget class="XProgressBar" name="xProgressBar_13">
+         <property name="value">
+          <number>80</number>
+         </property>
+         <property name="valueColor">
+          <color>
+           <red>34</red>
+           <green>169</green>
+           <blue>13</blue>
+          </color>
+         </property>
+         <property name="textColor">
+          <color alpha="0">
+           <red>255</red>
+           <green>255</green>
+           <blue>255</blue>
+          </color>
+         </property>
+         <property name="radius">
+          <number>1</number>
+         </property>
+        </widget>
+       </item>
+       <item row="5" column="2">
+        <widget class="XProgressBar" name="xProgressBar_14">
+         <property name="value">
+          <number>0</number>
+         </property>
+         <property name="textColor">
+          <color alpha="0">
+           <red>255</red>
+           <green>255</green>
+           <blue>255</blue>
+          </color>
+         </property>
+         <property name="radius">
+          <number>1</number>
+         </property>
+        </widget>
+       </item>
+       <item row="6" column="2">
+        <widget class="XProgressBar" name="xProgressBar_15">
+         <property name="value">
+          <number>0</number>
+         </property>
+         <property name="textColor">
+          <color alpha="0">
+           <red>255</red>
+           <green>255</green>
+           <blue>255</blue>
+          </color>
+         </property>
+         <property name="radius">
+          <number>1</number>
+         </property>
+        </widget>
+       </item>
+       <item row="7" column="2">
+        <widget class="XProgressBar" name="xProgressBar_16">
+         <property name="value">
+          <number>0</number>
+         </property>
+         <property name="textColor">
+          <color alpha="0">
+           <red>255</red>
+           <green>255</green>
+           <blue>255</blue>
+          </color>
+         </property>
+         <property name="radius">
+          <number>1</number>
+         </property>
+        </widget>
+       </item>
+       <item row="8" column="2">
+        <widget class="XProgressBar" name="xProgressBar_17">
+         <property name="value">
+          <number>0</number>
+         </property>
+         <property name="textColor">
+          <color alpha="0">
+           <red>255</red>
+           <green>255</green>
+           <blue>255</blue>
+          </color>
+         </property>
+         <property name="radius">
+          <number>1</number>
+         </property>
+        </widget>
+       </item>
+       <item row="9" column="2">
+        <widget class="XProgressBar" name="xProgressBar_18">
+         <property name="value">
+          <number>80</number>
+         </property>
+         <property name="valueColor">
+          <color>
+           <red>34</red>
+           <green>169</green>
+           <blue>13</blue>
+          </color>
+         </property>
+         <property name="textColor">
+          <color alpha="0">
+           <red>255</red>
+           <green>255</green>
+           <blue>255</blue>
+          </color>
+         </property>
+         <property name="radius">
+          <number>1</number>
          </property>
         </widget>
        </item>
@@ -1981,7 +2160,7 @@ background-color: rgba(255, 0, 0, 0%);</string>
       <property name="geometry">
        <rect>
         <x>40</x>
-        <y>50</y>
+        <y>10</y>
         <width>300</width>
         <height>160</height>
        </rect>
@@ -2000,7 +2179,7 @@ background-color: rgba(255, 0, 0, 0%);</string>
       <property name="geometry">
        <rect>
         <x>370</x>
-        <y>50</y>
+        <y>10</y>
         <width>300</width>
         <height>160</height>
        </rect>
@@ -3827,6 +4006,11 @@ background-color: rgba(255, 0, 0, 0%);</string>
    <class>SwitchButton</class>
    <extends>QWidget</extends>
    <header>switchbutton.h</header>
+  </customwidget>
+  <customwidget>
+   <class>XProgressBar</class>
+   <extends>QProgressBar</extends>
+   <header>xprogressbar.h</header>
   </customwidget>
  </customwidgets>
  <resources>
