@@ -7,7 +7,7 @@
 int speed,engine_state, cruisespeed,lastcruisespeed;
 int distval;
 
-int cruise_state;
+bool cruise_state;
 QtWidgetsApplication1::QtWidgetsApplication1(QWidget *parent)
     : QMainWindow(parent)
 {
@@ -22,13 +22,11 @@ QtWidgetsApplication1::QtWidgetsApplication1(QWidget *parent)
     ui.bv_DistVal->hide();
     cruise_state = CRUISE_OFF;
     distval = 1;
-    ui.gaugeColor_2->setScaleMajor(10);
 }
 void QtWidgetsApplication1::on_sbEngine_checkedChanged(bool value)
 {
     if (ui.sbEngine->getChecked())
     {
-        ui.gaugeColor_2->setAnimationStep(0.5);
         ui.gaugeColor_2->setValue(speed);
         ui.gaugeColor->setValue(1900);
         engine_state = 1;
@@ -36,17 +34,9 @@ void QtWidgetsApplication1::on_sbEngine_checkedChanged(bool value)
         
     else
     {
-        speed = 60;
-        ui.gaugeColor->setValue(0);
         ui.gaugeColor_2->setValue(0);
+        ui.gaugeColor->setValue(0);
         engine_state = 0;
-        ui.lb_cruiseicon->hide();
-        ui.lb_CruiseSpeed->hide();
-        ui.lb_DistIcon->hide();
-        ui.bv_DistVal->hide();
-        cruise_state = CRUISE_OFF;
-        distval = 1;
-        
     }
 }
 
@@ -78,13 +68,12 @@ void QtWidgetsApplication1::on_cbRES_clicked(void)
     {
         return;
     }
-    if (cruise_state != CRUISE_ON)
+    if (cruise_state == CRUISE_OFF)
     {
         return;
     }
-    cruise_state = CRUISE_START;
+
     cruisespeed = lastcruisespeed;
-    ui.lb_CruiseSpeed->setText(QString::number(cruisespeed) + QString("Km/h"));
 }
 void QtWidgetsApplication1::on_cbSET_clicked(void)
 {
@@ -92,14 +81,13 @@ void QtWidgetsApplication1::on_cbSET_clicked(void)
     {
         return;
     }
-    if (cruise_state != CRUISE_ON)
+    if (cruise_state == CRUISE_OFF)
     {
         return;
     }
-    cruise_state = CRUISE_START;
     cruisespeed = speed;
     lastcruisespeed = cruisespeed;
-    ui.lb_CruiseSpeed->setText(QString::number(cruisespeed) + QString("Km/h"));
+    ui.lb_CruiseSpeed->setText(QString::number(speed) + QString("Km/h"));
     ui.lb_CruiseSpeed->show();
     
 }
@@ -147,7 +135,7 @@ void QtWidgetsApplication1::on_cbup_clicked(void)
     }
     if(speed < 150)
         speed += 5;
-    ui.gaugeColor_2->setAnimationStep(0.5);
+
     ui.gaugeColor_2->setValue(speed);
 }
 void QtWidgetsApplication1::on_cbdown_clicked(void)
@@ -158,11 +146,8 @@ void QtWidgetsApplication1::on_cbdown_clicked(void)
     }
     if (speed > 4)
         speed -= 5;
-    ui.gaugeColor_2->setAnimationStep(0.5);
     ui.gaugeColor_2->setValue(speed);
     ui.lb_CruiseSpeed->hide();
-    if (cruise_state == CRUISE_START)
-        cruise_state = CRUISE_ON;
 }
 
 void QtWidgetsApplication1::on_cbMinus_clicked(void)
@@ -171,17 +156,14 @@ void QtWidgetsApplication1::on_cbMinus_clicked(void)
     {
         return;
     }
-    if (cruise_state != CRUISE_START)
+    if (cruise_state == CRUISE_OFF)
     {
         return;
     }
-    if (cruisespeed > 30)
-        cruisespeed -= 5;
-    ui.lb_CruiseSpeed->setText(QString::number(cruisespeed) + QString("Km/h"));
-    speed = cruisespeed;
-    ui.gaugeColor_2->setAnimationStep(0.05);
+    if (speed > 4)
+        speed -= 5;
     ui.gaugeColor_2->setValue(speed);
-
+    ui.lb_CruiseSpeed->hide();
 }
 
 void QtWidgetsApplication1::on_cbPlus_clicked(void)
@@ -190,15 +172,12 @@ void QtWidgetsApplication1::on_cbPlus_clicked(void)
     {
         return;
     }
-    if (cruise_state != CRUISE_START)
+    if (cruise_state == CRUISE_OFF)
     {
         return;
     }
-    if (cruisespeed < 180)
-        cruisespeed += 5;
-    ui.lb_CruiseSpeed->setText(QString::number(cruisespeed) + QString("Km/h"));
-    speed = cruisespeed;
-    ui.gaugeColor_2->setAnimationStep(0.05);
+    if (speed > 4)
+        speed -= 5;
     ui.gaugeColor_2->setValue(speed);
-    
+    ui.lb_CruiseSpeed->hide();
 }
