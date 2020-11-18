@@ -101,8 +101,14 @@
     <QtRcc Include="QtWidgetsApplication1.qrc" />
     <QtUic Include="QtWidgetsApplication1.ui" />
     <QtMoc Include="QtWidgetsApplication1.h" />
+    <ClCompile Include="PLIN_Driver.cpp" />
     <ClCompile Include="QtWidgetsApplication1.cpp" />
     <ClCompile Include="main.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="MsgStruct.h" />
+    <ClInclude Include="PLinApi.h" />
+    <ClInclude Include="PLIN_Driver.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Condition="Exists('$(QtMsBuild)\qt.targets')">
