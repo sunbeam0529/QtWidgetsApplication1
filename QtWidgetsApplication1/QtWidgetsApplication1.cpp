@@ -72,6 +72,7 @@ void QtWidgetsApplication1::onTimeOut01(void)
     static uint8_t ScheduleCount=0;
     uint8_t msgid;
     BYTE msgbuffer[8];
+    BYTE TxMsg[8] = { 0x00,0x00,0x00,0x00,0x00,0x00 ,0x00 ,0x00 };
     if (pd.isConnect() == RET_ERR)
     {
         Display(u8"Ó²¼þÎ´Á¬½Ó");
@@ -86,7 +87,10 @@ void QtWidgetsApplication1::onTimeOut01(void)
     switch (ScheduleCount)
     {
     case 0:
-        TransmitID(0x0A);//
+        TxMsg[2] = ui.stPressTh->value();
+        TxMsg[3] = ui.stMotorDrvCycle->value();
+        TxMsg[4] = ui.stMotorDrvLevel->value();
+        TransmitID(0x0A,TxMsg);//
         break;
     case 1:
         TransmitID(0x19);//
@@ -120,8 +124,32 @@ void QtWidgetsApplication1::ProcessMsg(uint8_t msgid, BYTE msgdata[])
     case 0x0A:
         break;
     case 0x10:
+        for (int i = 0; i < 8; i++)
+        {
+            msg_0x10.BYTE[i] = msgdata[i];
+        }
+        ui.xpb_l_signal0->setValue(msg_0x10.BYTE[0]);
+        ui.xpb_l_signal1->setValue(msg_0x10.BYTE[1]);
+        ui.xpb_l_signal2->setValue(msg_0x10.BYTE[2]);
+        ui.xpb_l_signal3->setValue(msg_0x10.BYTE[3]);
+        ui.xpb_l_signal4->setValue(msg_0x10.BYTE[4]);
+        ui.xpb_l_signal5->setValue(msg_0x10.BYTE[5]);
+        ui.xpb_l_signal6->setValue(msg_0x10.BYTE[6]);
+        ui.xpb_l_signal7->setValue(msg_0x10.BYTE[7]);
         break;
     case 0x11:
+        for (int i = 0; i < 8; i++)
+        {
+            msg_0x11.BYTE[i] = msgdata[i];
+        }
+        ui.xpb_r_signal0->setValue(msg_0x11.BYTE[0]);
+        ui.xpb_r_signal1->setValue(msg_0x11.BYTE[1]);
+        ui.xpb_r_signal2->setValue(msg_0x11.BYTE[2]);
+        ui.xpb_r_signal3->setValue(msg_0x11.BYTE[3]);
+        ui.xpb_r_signal4->setValue(msg_0x11.BYTE[4]);
+        ui.xpb_r_signal5->setValue(msg_0x11.BYTE[5]);
+        ui.xpb_r_signal6->setValue(msg_0x11.BYTE[6]);
+        ui.xpb_r_signal7->setValue(msg_0x11.BYTE[7]);
         break;
     case 0x19:
         for (int i = 0; i < 8; i++)
@@ -178,7 +206,7 @@ void QtWidgetsApplication1::ProcessMsg(uint8_t msgid, BYTE msgdata[])
         {
             LeftKeyFlag = 0;
         }
-
+        ui.xpb_l_press->setValue(msg_0x19.Data.ReverseByte4);
         break;
     case 0x1A:
         for (int i = 0; i < 8; i++)
@@ -235,6 +263,7 @@ void QtWidgetsApplication1::ProcessMsg(uint8_t msgid, BYTE msgdata[])
         {
             RightKeyFlag = 0;
         }
+        ui.xpb_r_press->setValue(msg_0x1A.Data.ReverseByte4);
         break;
     default:
         break;
