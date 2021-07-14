@@ -87,6 +87,7 @@ void QtWidgetsApplication1::onTimeOut01(void)
     switch (ScheduleCount)
     {
     case 0:
+        TxMsg[1] = ui.stBacklight->value();
         TxMsg[2] = ui.stPressTh->value();
         TxMsg[3] = ui.stMotorDrvCycle->value();
         TxMsg[4] = ui.stMotorDrvLevel->value();
@@ -117,8 +118,9 @@ void QtWidgetsApplication1::onTimeOut01(void)
 
 void QtWidgetsApplication1::ProcessMsg(uint8_t msgid, BYTE msgdata[])
 {
-    static uint8_t LeftKeyFlag,RightKeyFlag;
+    static uint8_t LeftKeyFlag,RightKeyFlag,LeftPressFlag,RightPressFlag;
     uint8_t  flag;
+    uint32_t pressVal,times;
     switch (msgid)
     {
     case 0x0A:
@@ -206,7 +208,30 @@ void QtWidgetsApplication1::ProcessMsg(uint8_t msgid, BYTE msgdata[])
         {
             LeftKeyFlag = 0;
         }
-        ui.xpb_l_press->setValue(msg_0x19.Data.ReverseByte4);
+        pressVal = msg_0x19.Data.ReverseByte5;
+        pressVal <<= 8;
+        pressVal += msg_0x19.Data.ReverseByte4;
+        ui.xpb_l_press->setValue(pressVal);
+        if (ui.checkBox_press->isChecked() == true)
+        {
+            if (LeftPressFlag == 0)
+            {
+                if (pressVal > 200)
+                {
+                    LeftPressFlag = 1;
+                    times = ui.label_log_pressL->text().toInt();
+                    times++;
+                    ui.label_log_pressL->setText(QString::number(times));
+                }
+            }
+            else
+            {
+                if (pressVal < 100)
+                {
+                    LeftPressFlag = 0;
+                }
+            }
+        }
         break;
     case 0x1A:
         for (int i = 0; i < 8; i++)
@@ -263,7 +288,30 @@ void QtWidgetsApplication1::ProcessMsg(uint8_t msgid, BYTE msgdata[])
         {
             RightKeyFlag = 0;
         }
-        ui.xpb_r_press->setValue(msg_0x1A.Data.ReverseByte4);
+        pressVal = msg_0x1A.Data.ReverseByte5;
+        pressVal <<= 8;
+        pressVal += msg_0x1A.Data.ReverseByte4;
+        if (ui.checkBox_press->isChecked() == true)
+        {
+            if (RightPressFlag == 0)
+            {
+                if (pressVal > 200)
+                {
+                    RightPressFlag = 1;
+                    times = ui.label_log_pressR->text().toInt();
+                    times++;
+                    ui.label_log_pressR->setText(QString::number(times));
+                }
+            }
+            else
+            {
+                if (pressVal < 100)
+                {
+                    RightPressFlag = 0;
+                }
+            }
+        }
+        ui.xpb_r_press->setValue(pressVal);
         break;
     default:
         break;
