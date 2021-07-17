@@ -59,6 +59,7 @@ QtWidgetsApplication1::QtWidgetsApplication1(QWidget *parent)
     //timer
     timer = new QTimer(this);
     connect(timer, SIGNAL(timeout()), this, SLOT(onTimeOut01()));
+    ui.textBrowser->document()->setMaximumBlockCount(10000);
 }
 
 QtWidgetsApplication1::~QtWidgetsApplication1(void)
@@ -216,7 +217,7 @@ void QtWidgetsApplication1::ProcessMsg(uint8_t msgid, BYTE msgdata[])
         {
             if (LeftPressFlag == 0)
             {
-                if (pressVal > 200)
+                if (pressVal > 300)
                 {
                     LeftPressFlag = 1;
                     times = ui.label_log_pressL->text().toInt();
@@ -226,7 +227,7 @@ void QtWidgetsApplication1::ProcessMsg(uint8_t msgid, BYTE msgdata[])
             }
             else
             {
-                if (pressVal < 100)
+                if (pressVal < 200)
                 {
                     LeftPressFlag = 0;
                 }
@@ -295,7 +296,7 @@ void QtWidgetsApplication1::ProcessMsg(uint8_t msgid, BYTE msgdata[])
         {
             if (RightPressFlag == 0)
             {
-                if (pressVal > 200)
+                if (pressVal > 300)
                 {
                     RightPressFlag = 1;
                     times = ui.label_log_pressR->text().toInt();
@@ -305,7 +306,7 @@ void QtWidgetsApplication1::ProcessMsg(uint8_t msgid, BYTE msgdata[])
             }
             else
             {
-                if (pressVal < 100)
+                if (pressVal < 200)
                 {
                     RightPressFlag = 0;
                 }
