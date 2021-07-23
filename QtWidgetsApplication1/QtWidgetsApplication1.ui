@@ -27,7 +27,7 @@
      </rect>
     </property>
     <property name="currentIndex">
-     <number>6</number>
+     <number>7</number>
     </property>
     <widget class="QWidget" name="tab_5">
      <attribute name="title">
@@ -5087,9 +5087,9 @@ border-style: solid;</string>
       <property name="geometry">
        <rect>
         <x>20</x>
-        <y>170</y>
+        <y>80</y>
         <width>831</width>
-        <height>381</height>
+        <height>471</height>
        </rect>
       </property>
      </widget>
@@ -5105,6 +5105,246 @@ border-style: solid;</string>
       <property name="text">
        <string notr="true">清空</string>
       </property>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="tab_8">
+     <attribute name="title">
+      <string>灯带</string>
+     </attribute>
+     <widget class="QComboBox" name="cbbTurnLightSts">
+      <property name="geometry">
+       <rect>
+        <x>210</x>
+        <y>40</y>
+        <width>111</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>微软雅黑</family>
+        <pointsize>18</pointsize>
+       </font>
+      </property>
+      <item>
+       <property name="text">
+        <string>不转向</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>左转向</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>右转向</string>
+       </property>
+      </item>
+     </widget>
+     <widget class="QLabel" name="label_82">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>20</y>
+        <width>171</width>
+        <height>81</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>微软雅黑</family>
+        <pointsize>18</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string>转向灯开关状态</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_83">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>100</y>
+        <width>171</width>
+        <height>81</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>微软雅黑</family>
+        <pointsize>18</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string>灯带颜色</string>
+      </property>
+     </widget>
+     <widget class="QComboBox" name="cbbTurnLightColor">
+      <property name="geometry">
+       <rect>
+        <x>130</x>
+        <y>120</y>
+        <width>111</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>微软雅黑</family>
+        <pointsize>18</pointsize>
+       </font>
+      </property>
+      <item>
+       <property name="text">
+        <string>不亮</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>白色</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>绿色</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>红色</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>蓝色</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>黄色</string>
+       </property>
+      </item>
+     </widget>
+     <widget class="QLabel" name="label_84">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>190</y>
+        <width>171</width>
+        <height>81</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>微软雅黑</family>
+        <pointsize>18</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string>闪烁</string>
+      </property>
+     </widget>
+     <widget class="QComboBox" name="cbbTurnLightColor_2">
+      <property name="geometry">
+       <rect>
+        <x>130</x>
+        <y>210</y>
+        <width>111</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>微软雅黑</family>
+        <pointsize>18</pointsize>
+       </font>
+      </property>
+      <item>
+       <property name="text">
+        <string>常亮</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>按照频率闪烁</string>
+       </property>
+      </item>
+     </widget>
+     <widget class="QLabel" name="label_93">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>290</y>
+        <width>171</width>
+        <height>81</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>微软雅黑</family>
+        <pointsize>18</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string>亮度</string>
+      </property>
+     </widget>
+     <widget class="QComboBox" name="cbbTurnLightLight">
+      <property name="geometry">
+       <rect>
+        <x>130</x>
+        <y>310</y>
+        <width>111</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>微软雅黑</family>
+        <pointsize>18</pointsize>
+       </font>
+      </property>
+      <item>
+       <property name="text">
+        <string>无效</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>OFF</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>level 1</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>level 2</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>level 3</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>level 4</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>level 5</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>level 6</string>
+       </property>
+      </item>
      </widget>
     </widget>
    </widget>
