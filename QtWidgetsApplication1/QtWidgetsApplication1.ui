@@ -5114,9 +5114,9 @@ border-style: solid;</string>
      <widget class="QComboBox" name="cbbTurnLightSts">
       <property name="geometry">
        <rect>
-        <x>210</x>
+        <x>230</x>
         <y>40</y>
-        <width>111</width>
+        <width>131</width>
         <height>41</height>
        </rect>
       </property>
@@ -5147,7 +5147,7 @@ border-style: solid;</string>
        <rect>
         <x>10</x>
         <y>20</y>
-        <width>171</width>
+        <width>221</width>
         <height>81</height>
        </rect>
       </property>
@@ -5183,7 +5183,7 @@ border-style: solid;</string>
      <widget class="QComboBox" name="cbbTurnLightColor">
       <property name="geometry">
        <rect>
-        <x>130</x>
+        <x>140</x>
         <y>120</y>
         <width>111</width>
         <height>41</height>
