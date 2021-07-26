@@ -10,6 +10,8 @@ MSG_11_TYPE msg_0x11;
 MSG_19_TYPE msg_0x19;
 MSG_1A_TYPE msg_0x1A;
 
+#define PRODUCT 0x01
+
 
 
 #define CRUISE_OFF      0
@@ -60,6 +62,13 @@ QtWidgetsApplication1::QtWidgetsApplication1(QWidget *parent)
     timer = new QTimer(this);
     connect(timer, SIGNAL(timeout()), this, SLOT(onTimeOut01()));
     ui.textBrowser->document()->setMaximumBlockCount(10000);
+    ui.tabWidget->setTabEnabled(0, FALSE);
+    ui.tabWidget->setTabEnabled(1, FALSE);
+    ui.tabWidget->setTabEnabled(2, FALSE);
+    ui.tabWidget->setTabEnabled(3, FALSE);
+    ui.tabWidget->setTabEnabled(4, FALSE);
+    ui.tabWidget->setTabEnabled(5, FALSE);
+    ui.tabWidget->setStyleSheet("QTabBar::tab:disabled {width: 0; color: transparent;}");//隐藏disable的tab
 }
 
 QtWidgetsApplication1::~QtWidgetsApplication1(void)
@@ -67,13 +76,32 @@ QtWidgetsApplication1::~QtWidgetsApplication1(void)
     pd.DoLINDisconnect();//断开连接
 
 }
+typedef union
+{
+    unsigned char Msg_Byte[8];
+    struct 
+    {
+        //byte 1
+        uint8_t IGNStatus : 2;
+        uint8_t TurnLightSwitchSts : 2;
+        uint8_t TJPLightColorRequest : 3;
+        uint8_t TJPLightFlashRequest : 1;
+        //byte 2
+        uint8_t HODStatus : 1;
+        uint8_t LightBrightRequest : 3;
+        uint8_t LightFrequencyRequest : 3;
+        uint8_t Reserved : 1;
 
+    }Msg_Part;
+}MSG_LIGHTBAR_CTRL;
+MSG_LIGHTBAR_CTRL LightBarMsg;
 void QtWidgetsApplication1::onTimeOut01(void)
 {
     static uint8_t ScheduleCount=0;
     uint8_t msgid;
     BYTE msgbuffer[8];
     BYTE TxMsg[8] = { 0x00,0x00,0x00,0x00,0x00,0x00 ,0x00 ,0x00 };
+    
     if (pd.isConnect() == RET_ERR)
     {
         Display(u8"硬件未连接");
@@ -85,6 +113,8 @@ void QtWidgetsApplication1::onTimeOut01(void)
 
     ProcessMsg(msgid, msgbuffer);
 
+#if (PRODUCT == 0x00)
+ 
     switch (ScheduleCount)
     {
     case 0:
@@ -109,6 +139,42 @@ void QtWidgetsApplication1::onTimeOut01(void)
     default:
         break;
     }
+
+#elif (PRODUCT == 0x01)
+    
+    switch (ScheduleCount)
+    {
+    case 0:
+        LightBarMsg.Msg_Part.TurnLightSwitchSts = ui.cbbTurnLightSts->currentIndex();
+        LightBarMsg.Msg_Part.TJPLightColorRequest = ui.cbbTurnLightColor->currentIndex();
+        LightBarMsg.Msg_Part.TJPLightFlashRequest = ui.cbbTurnLightFalshReq->currentIndex();
+        LightBarMsg.Msg_Part.LightBrightRequest = ui.cbbTurnLightLight->currentIndex();
+        LightBarMsg.Msg_Part.LightFrequencyRequest = ui.cbbTurnLightFlashFeq->currentIndex();
+        //TxMsg[1] = ui.stBacklight->value();
+        //TxMsg[2] = ui.stPressTh->value();
+        //TxMsg[3] = ui.stMotorDrvCycle->value();
+        //TxMsg[4] = ui.stMotorDrvLevel->value();
+        TxMsg[0] = LightBarMsg.Msg_Byte[0];
+        TxMsg[1] = LightBarMsg.Msg_Byte[1];
+        TransmitID(0x0A, TxMsg);//
+        break;
+    case 1:
+        //TransmitID(0x19);//
+        break;
+    case 2:
+        //TransmitID(0x1A);//
+        break;
+    case 3:
+        //TransmitID(0x10);//
+        break;
+    case 4:
+        //TransmitID(0x11);//
+        break;
+    default:
+        break;
+    }
+#endif // 0
+
     ScheduleCount++;
     if (ScheduleCount > 4)
     {

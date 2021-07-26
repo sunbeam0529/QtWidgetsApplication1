@@ -5245,12 +5245,12 @@ border-style: solid;</string>
        <string>闪烁</string>
       </property>
      </widget>
-     <widget class="QComboBox" name="cbbTurnLightColor_2">
+     <widget class="QComboBox" name="cbbTurnLightFalshReq">
       <property name="geometry">
        <rect>
         <x>130</x>
         <y>210</y>
-        <width>111</width>
+        <width>221</width>
         <height>41</height>
        </rect>
       </property>
@@ -5305,6 +5305,9 @@ border-style: solid;</string>
         <pointsize>18</pointsize>
        </font>
       </property>
+      <property name="currentIndex">
+       <number>0</number>
+      </property>
       <item>
        <property name="text">
         <string>无效</string>
@@ -5346,14 +5349,92 @@ border-style: solid;</string>
        </property>
       </item>
      </widget>
+     <widget class="QLabel" name="label_94">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>370</y>
+        <width>171</width>
+        <height>81</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>微软雅黑</family>
+        <pointsize>18</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string>闪烁周期</string>
+      </property>
+     </widget>
+     <widget class="QComboBox" name="cbbTurnLightFlashFeq">
+      <property name="geometry">
+       <rect>
+        <x>130</x>
+        <y>390</y>
+        <width>111</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>微软雅黑</family>
+        <pointsize>18</pointsize>
+       </font>
+      </property>
+      <property name="currentIndex">
+       <number>0</number>
+      </property>
+      <item>
+       <property name="text">
+        <string>无效</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>0.3S</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>0.5S</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>0.8S</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>1S</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>1.5S</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>2S</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>3S</string>
+       </property>
+      </item>
+     </widget>
     </widget>
    </widget>
    <widget class="QLabel" name="label_44">
     <property name="geometry">
      <rect>
-      <x>790</x>
+      <x>770</x>
       <y>600</y>
-      <width>101</width>
+      <width>121</width>
       <height>21</height>
      </rect>
     </property>
@@ -5364,7 +5445,7 @@ border-style: solid;</string>
      </font>
     </property>
     <property name="text">
-     <string>20210719</string>
+     <string>20210726</string>
     </property>
    </widget>
   </widget>
